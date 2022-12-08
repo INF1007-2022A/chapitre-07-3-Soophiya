@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import mido
+import mido # pip install mido pour installer la librairie
 
 
 NOTES_PER_OCTAVE = 12
