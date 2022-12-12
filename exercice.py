@@ -31,13 +31,36 @@ def build_note_dictionaries(note_names, add_octave_no=True):
 
 def build_print_note_name_callback(midi_to_name):
 	
+	#créer une fonction qui prend en paramètre un message midi et qui affiche le nom de la note correspondante
+	#créer et retourner le callback
+
+	def callback(message):
+		if message.type == "note_on" and message.velocity > 0:
+			print(midi_to_name[message.note])
+		return callback
 
 def build_print_chord_name_callback(chord_names_and_notes, name_to_midi):
 	# Construire le dictionnaire d'assocations entre état des notes et accord joué.
-	
-	# Créez et retourner le callback
-	pass
+	cordes = {}
 
+	for nom_accord, notes in chord_names_and_notes.items():
+		notes_cordes = [False] * NOTES_PER_OCTAVE
+		for note in notes:
+			notes_cordes[name_to_midi[note] % NOTES_PER_OCTAVE] = True
+		cordes[tuple(notes_cordes)] = nom_accord
+
+	# Créez et retourner le callback
+	def callback(message):
+		if message.type == "note_on" and message.velocity > 0:
+			cordes[message.note] = True
+		elif message.type == "note_off" or (message.type == "note_on" and message.velocity == 0):
+			cordes[message.note] = False
+		else:
+			return
+		if tuple(cordes) in cordes:
+			print(cordes[tuple(cordes)])
+		return callback
+	
 
 def main():
 	PORT_MIDI = "UnPortMIDI 0"

@@ -1,0 +1,63 @@
+test_build_recursive_sequence_generator (__main__.TestExercice) ... FAIL
+test_fibonacci_number (__main__.TestExercice) ... ERROR
+test_get_fibonacci_number (__main__.TestExercice) ... ERROR
+test_get_fibonacci_sequence (__main__.TestExercice) ... ERROR
+test_get_sorted_dict_by_decimals (__main__.TestExercice) ... ERROR
+
+======================================================================
+ERROR: test_fibonacci_number (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sophiegrenier/Documents/GitHub/INF 1007/Exercices/Chapitre 7/chapitre-07-3-Soophiya/test_exercice.py", line 69, in test_fibonacci_number
+    output = [fibo for fibo in fibonacci_numbers(10)]
+NameError: name 'fibonacci_numbers' is not defined
+
+======================================================================
+ERROR: test_get_fibonacci_number (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sophiegrenier/Documents/GitHub/INF 1007/Exercices/Chapitre 7/chapitre-07-3-Soophiya/test_exercice.py", line 16, in test_get_fibonacci_number
+    output = [get_fibonacci_number(i) for i in range(10)]
+  File "/Users/sophiegrenier/Documents/GitHub/INF 1007/Exercices/Chapitre 7/chapitre-07-3-Soophiya/test_exercice.py", line 16, in <listcomp>
+    output = [get_fibonacci_number(i) for i in range(10)]
+NameError: name 'get_fibonacci_number' is not defined
+
+======================================================================
+ERROR: test_get_fibonacci_sequence (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sophiegrenier/Documents/GitHub/INF 1007/Exercices/Chapitre 7/chapitre-07-3-Soophiya/test_exercice.py", line 35, in test_get_fibonacci_sequence
+    output = [get_fibonacci_sequence(v) for v in values]
+  File "/Users/sophiegrenier/Documents/GitHub/INF 1007/Exercices/Chapitre 7/chapitre-07-3-Soophiya/test_exercice.py", line 35, in <listcomp>
+    output = [get_fibonacci_sequence(v) for v in values]
+NameError: name 'get_fibonacci_sequence' is not defined
+
+======================================================================
+ERROR: test_get_sorted_dict_by_decimals (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sophiegrenier/Documents/GitHub/INF 1007/Exercices/Chapitre 7/chapitre-07-3-Soophiya/test_exercice.py", line 60, in test_get_sorted_dict_by_decimals
+    output = [get_sorted_dict_by_decimals(v) for v in values]
+  File "/Users/sophiegrenier/Documents/GitHub/INF 1007/Exercices/Chapitre 7/chapitre-07-3-Soophiya/test_exercice.py", line 60, in <listcomp>
+    output = [get_sorted_dict_by_decimals(v) for v in values]
+NameError: name 'get_sorted_dict_by_decimals' is not defined
+
+======================================================================
+FAIL: test_build_recursive_sequence_generator (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sophiegrenier/Documents/GitHub/INF 1007/Exercices/Chapitre 7/chapitre-07-3-Soophiya/test_exercice.py", line 80, in test_build_recursive_sequence_generator
+    fibo = build_recursive_sequence_generator([0, 1], fibo_def, False)
+NameError: name 'build_recursive_sequence_generator' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/sophiegrenier/Documents/GitHub/INF 1007/Exercices/Chapitre 7/chapitre-07-3-Soophiya/test_exercice.py", line 82, in test_build_recursive_sequence_generator
+    self.fail("l'appel échoue")
+AssertionError: l'appel échoue
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=1, errors=4)
